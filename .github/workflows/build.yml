@@ -11,6 +11,11 @@ jobs:
   build:
     name: Build & Upload APK
     runs-on: ubuntu-latest
+
+    # اذكر هنا اسم المجلد اللي فيه الـ gradlew (مثال: android)
+    defaults:
+      run:
+        working-directory: ./android
     
     # ── FIX: Evaluate the secret here. This returns 'true' or 'false'
     env:
