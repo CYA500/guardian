@@ -11,6 +11,10 @@ jobs:
   build:
     name: Build & Upload APK
     runs-on: ubuntu-latest
+    
+    # ── FIX: Evaluate the secret here. This returns 'true' or 'false'
+    env:
+      HAS_KEYSTORE: ${{ secrets.KEYSTORE_BASE64 != '' }}
 
     steps:
       # ── 1. Checkout ──────────────────────────────────────────────────
@@ -56,7 +60,7 @@ jobs:
 
       # ── 7. (Optional) Build release APK if keystore secret exists ────
       - name: Build Release APK
-        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
+        if: env.HAS_KEYSTORE == 'true' # ── FIX: Check the env variable instead
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release.keystore
           ./gradlew assembleRelease \
@@ -66,9 +70,9 @@ jobs:
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Upload Release APK
-        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
+        if: env.HAS_KEYSTORE == 'true' # ── FIX: Check the env variable instead
         uses: actions/upload-artifact@v4
         with:
           name: guardian-release-${{ github.run_number }}
           path: app/build/outputs/apk/release/app-release.apk
-          retention-days: 90 
+          retention-days: 90
