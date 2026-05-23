@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الحارس</string>
+    <string name="accessibility_service_label">الحارس — مراقبة المحتوى</string>
+    <string name="accessibility_service_description">يراقب الحارسُ النصوص المكتوبة والمواقع المفتوحة للكشف عن المحتوى غير اللائق وحجبه فوراً.</string>
+    <string name="notification_channel_lock">الحارس — قفل نشط</string>
+    <string name="notification_channel_vpn">الحارس — VPN نشط</string>
+    <string name="lock_active_title">القفل نشط</string>
+    <string name="lock_remaining">الوقت المتبقي: %1$s</string>
+    <string name="vpn_active_title">الحارس — الحماية نشطة</string>
+    <string name="vpn_active_body">يتم تصفية المحتوى غير اللائق</string>
+</resources>

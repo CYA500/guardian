@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="olive_green">#4A5E3A</color>
+    <color name="olive_green_dark">#2E3D24</color>
+    <color name="olive_light">#6B7F56</color>
+    <color name="gold">#C9A84C</color>
+    <color name="gold_light">#E8C97A</color>
+    <color name="off_white">#F7F5F0</color>
+    <color name="dark_bg">#0D1117</color>
+    <color name="dark_surface">#111820</color>
+</resources>
